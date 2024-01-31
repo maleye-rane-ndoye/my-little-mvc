@@ -3,13 +3,9 @@ ob_start();
 
 ?>
 
-<div class="text-primary bg-secondary">
+<div class ="">
     the content  
-    <span class="text-4xl underline font-bold text-rose-600">Hello World</span>
-
-    <div class="Box"></div>
-
-</spqn>
+</div>
 
 <?php
 $content = ob_get_clean();

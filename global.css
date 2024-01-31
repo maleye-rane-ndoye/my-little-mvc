@@ -4,13 +4,8 @@
 
 
 body {
-    background: black;
-    color: white;
+    background: white;
+    color: black;
 
 }
 
-@layer {
-    .Box {
-        @apply size-60 place-self-center bg-black outline-2 outline-yellow-300;
-    }
-}
