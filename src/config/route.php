@@ -1,9 +1,9 @@
 <?php
 use App\Controllers\TestController;
 
-$router->map( 'GET', '/test', function(){
+$router->map( 'GET', '/shop', function(){
 
     $testController = new TestController;
-    $testController->showtestPage();
-},'test' );
+    $testController->showshopPage();
+},'shop' );
 

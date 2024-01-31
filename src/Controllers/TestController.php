@@ -4,8 +4,8 @@ namespace App\Controllers;
 class TestController 
 
 {
-    public function showtestPage()
+    public function showshopPage()
     {
-        require __DIR__ . '/../Views/test.php';
+        require __DIR__ . '/../Views/shop.php';
     }
 }
