@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    background: black;
+    color: white;
+
+}
+
+@layer {
+    .Box {
+        @apply size-60 place-self-center bg-black outline-2 outline-yellow-300;
+    }
+}
