@@ -2,11 +2,9 @@
 
 namespace App\Models;
 use PDO;
-use App\Models\GetCategory;
 
 
-
-class GetProducts extends DatabaseLog 
+class GetProducts extends Databaselog 
 {
     private $id;
     private $name;
@@ -123,7 +121,7 @@ class GetProducts extends DatabaseLog
 
         foreach ($productsData as $productData) {
             // Créer une nouvelle instance de la classe Product
-            $product = new GetProduct();
+            $product = new GetProducts();
 
             // Hydrater l'instance avec les données récupérées
             $product->hydrate($productData);

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/B2/my-little-mvc/public/js/redirect.js"></script>
+
     <title>shop</title>
 
     <link rel="stylesheet" href="style.css">

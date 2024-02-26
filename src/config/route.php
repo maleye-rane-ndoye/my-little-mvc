@@ -1,9 +1,25 @@
 <?php
-use App\Controllers\TestController;
 
-$router->map( 'GET', '/shop', function(){
+use App\Controllers\UserController;
+use App\Controllers\ShopController;
 
-    $testController = new TestController;
-    $testController->showshopPage();
-},'shop' );
+// Route pour afficher le formulaire d'inscription
+$router->map('GET', '/register', [new UserController(), 'register']);
 
+// Route pour traiter la soumission du formulaire d'inscription
+$router->map('POST', '/register', function(){
+          $register = new UserController();
+          $register->register();
+}, 'register');
+
+// Route pour afficher le formulaire de connexion
+$router->map('GET', '/login', [new UserController(), 'login']);
+
+// Route pour traiter la soumission du formulaire de connexion
+$router->map('POST', '/login', [new UserController(), 'login']);
+
+// Route pour afficher la page du magasin (existant dans votre code)
+$router->map('GET', '/shop', function(){
+    $shopController = new ShopController;
+    $shopController->showshopPage();
+}, 'shop');
