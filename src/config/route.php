@@ -3,14 +3,11 @@
 use App\Controllers\UserController;
 use App\Controllers\ShopController;
 
-// Route pour afficher le formulaire d'inscription
+/// Route pour afficher le formulaire d'inscription
 $router->map('GET', '/register', [new UserController(), 'register']);
 
 // Route pour traiter la soumission du formulaire d'inscription
-$router->map('POST', '/register', function(){
-          $register = new UserController();
-          $register->register();
-}, 'register');
+$router->map('POST', '/register', [new UserController(), 'register']);
 
 // Route pour afficher le formulaire de connexion
 $router->map('GET', '/login', [new UserController(), 'login']);
