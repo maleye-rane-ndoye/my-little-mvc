@@ -16,9 +16,13 @@ ob_start();
     <input type="email" id="email" name="email" required><br>
     <label for="password">Mot de passe :</label>
     <input type="password" id="password" name="password" required><br>
+    <label for="confirm_password">Confirmer le mot de passe :</label>
+    <input type="password" id="confirm_password" name="confirm_password" required><br>
     <button type="submit">S'inscrire</button>
 </form>
-<script src="/B2/my-little-mvc/public/js/redirect.js"></script>
+
+<script src="/B2/my-little-mvc/public/js/passConfirm.js"></script>
+
 <?php
 // Fin du contenu de la page
 $content = ob_get_clean();
