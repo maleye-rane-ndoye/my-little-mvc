@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use  App\Models\User;
+use App\Models\User;
 
 class UserController {
 
@@ -58,16 +58,21 @@ class UserController {
             // Récupérer les données du formulaire
             $email = $_POST['email'];
             $password = $_POST['password'];
-
+    
             // Créer une instance du modèle User
             $userModel = new User();
-
-            // Appeler la méthode login du modèle User pouregisterr tenter la connexion
+    
+            // Appeler la méthode login du modèle User pour tenter la connexion
             $user = $userModel->login($email, $password);
-
+    
             if ($user) {
-                // L'utilisateur est authentifié avec succès, rediriger vers une page sécurisée
-                header("Location: /B2/my-little-mvc/src/Views/shop.php");
+                // L'utilisateur est authentifié avec succès, initialiser la session
+                session_start();
+                // Stocker des informations sur la session de l'utilisateur
+                $_SESSION['user_id'] = $user['id']; // Par exemple, stockez l'ID de l'utilisateur
+                $_SESSION['username'] = $user['firstname'];
+                // Rediriger vers une page sécurisée
+                header("Location: /B2/my-little-mvc/shop");
                 exit();
             } else {
                 // Afficher un message d'erreur
@@ -78,4 +83,15 @@ class UserController {
             include(dirname(__FILE__) . '/../Views/login_form.php');
         }
     }
+
+
+    public function logout() {
+        // Détruisez la session
+        session_destroy();
+        // Redirigez l'utilisateur vers la page de connexion ou une autre page
+        header("Location: /B2/my-little-mvc/login");
+        exit();
+    }
+    
+    
 }

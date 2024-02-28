@@ -1,19 +1,10 @@
 <?php
-
-require_once(dirname(__FILE__) . '/../config/session_manager.php');
-
 ob_start();
-
 ?>
-               
- <a href="/B2/my-little-mvc/logout">Déconnexion</a>
+<div >    
 
-
-<div id="userWelcomeMessage">
-    <?php echo 'Bienvenue, ' . $username; ?>
-</div>
-<div >
-        
+        <a href="/B2/my-little-mvc/register">Sign up</a>
+        <a href="/B2/my-little-mvc/login">Sign in</a>
         <?php
         // Afficher les produits
         echo "<h2>Produits :</h2>";

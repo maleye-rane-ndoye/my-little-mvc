@@ -4,7 +4,7 @@ namespace App\Models;
 use PDO;
 
 
-class GetProducts extends Databaselog 
+class GetProducts extends DatabaseLog 
 {
     private $id;
     private $name;

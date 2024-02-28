@@ -1,7 +1,6 @@
 <?php
 // Définir le titre de la page
 $title = "Formulaire d'inscription";
-
 // Début du contenu de la page
 ob_start();
 ?>
@@ -21,7 +20,7 @@ ob_start();
     <button type="submit">S'inscrire</button>
 </form>
 
-<script src="/B2/my-little-mvc/public/js/passConfirm.js"></script>
+<script src="/B2/my-little-mvc/public/js/passConfir.js"></script>
 
 <?php
 // Fin du contenu de la page
