@@ -444,6 +444,13 @@ video {
   display: none;
 }
 
+.test {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -544,21 +551,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
+body{
+  margin: 0 ;
+  padding: 0;
+  overflow: hidden;
 }
-
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.text-center {
-  text-align: center;
-}
-
-body {
-  background: white;
-  color: black;
-}
-

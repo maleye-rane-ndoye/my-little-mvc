@@ -3,9 +3,21 @@
 @tailwind utilities;
 
 
-body {
-    background: white;
-    color: black;
+
+body{
+    margin: 0 ;
+    padding: 0;
+    overflow: hidden;
 
 }
 
+
+
+@layer base{
+
+  .test{@apply
+    bg-red-600 text-3xl;
+
+  }
+
+}

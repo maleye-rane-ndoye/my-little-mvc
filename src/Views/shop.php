@@ -1,12 +1,12 @@
 <?php
-
 require_once(dirname(__FILE__) . '/../config/session_manager.php');
-
 ob_start();
-
 ?>
-               
- <a href="/B2/my-little-mvc/logout">Déconnexion</a>
+
+
+
+<a href="/B2/my-little-mvc/logout">Déconnexion</a>
+<div class='test'> the test css</div>
 
 
 <div id="userWelcomeMessage">
@@ -25,7 +25,7 @@ ob_start();
 </div>
 
 <?php
-$title = " thid is all products";
+$title = " this is all products";
 $content = ob_get_clean();
 require_once "template.php";
 ?>

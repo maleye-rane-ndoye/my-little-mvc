@@ -1,12 +1,10 @@
-module.exports = {
-    content: ["./src/**/*.{php,css}"],
+export default {
+    content: [
+      "./index.html",
+      "./src/**/*.{php,css}",
+    ],
     theme: {
-      extend: {
-        colors: {
-          primary: '#3333',
-          secondary: '#ccc',
-        },
-      },
+      extend: {},
     },
     plugins: [],
-  };
+  }

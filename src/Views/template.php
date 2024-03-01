@@ -8,12 +8,11 @@
 
     <title>shop</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-               
                 <?= $title ?>
                 <?= $content ?>
 </body>
-</html>
+</html> 

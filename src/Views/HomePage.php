@@ -16,7 +16,7 @@ ob_start();
 </div>
 
 <?php
-$title = " thid is all products";
+$title = " this is all products";
 $content = ob_get_clean();
 require_once "template.php";
 ?>
