@@ -3,21 +3,150 @@
 @tailwind utilities;
 
 
-
 body{
     margin: 0 ;
     padding: 0;
-    overflow: hidden;
 
 }
+
 
 
 
 @layer base{
 
   .test{@apply
-    bg-red-600 text-3xl;
+    bg-red-600;
 
+  }
+
+
+
+  .nav{@apply
+    w-full
+    h-auto
+    p-4
+    max-w-screen-xl
+    mx-auto
+    border-b
+    flex
+    flex-col
+    items-center
+    justify-around
+    shadow-md
+   
+  }
+  .dashboard{@apply
+    hidden
+    md:flex
+    w-full
+    flex-row
+    items-center
+    justify-around
+    mb-4
+  }
+ 
+  .dashboard a{@apply
+   text-sm
+   hover:underline
+   font-medium
+  }
+
+  .dashboard a.active {@apply 
+    text-blue-500;
+  }
+  
+  
+  .dashboard a:hover {@apply 
+    text-gray-700;
+  }
+  
+  .dashboard div{@apply
+   text-lg
+  
+  }
+
+  
+  .dashboard input {@apply
+     border border-gray-300 rounded px-2 py-1;
+  }
+  
+  
+  .dashboard div:first-child {@apply 
+    font-extrabold
+    text-xl 
+    truncate;
+
+  }
+  
+  
+  .dashboard div:not(:first-child) {@apply 
+    ml-4;
+  }
+  
+
+
+  .block{@apply
+    text-gray-500 
+    hover:text-gray-900 
+    focus:text-gray-900 
+    focus:outline-none
+  }
+
+
+    /* Pour les catégories déroulantes */
+  #categoriesDropdown {@apply
+    rounded-md
+    shadow-xl;
+    position: absolute; /* Position absolue par rapport au parent */
+    top: 40px; /* Position sous le bouton de menu */
+    left: 24px; /* Alignement à gauche */
+    z-index: 999; /* Pour s'assurer que les catégories s'affichent au-dessus de tout */
+    background-color: white; /* Fond blanc */
+    padding: 10px; /* Espacement intérieur */
+    
+  }
+
+  /* Pour les liens des catégories */
+  #categoriesDropdown a {@apply
+    w-40
+    hover:text-lg;
+    display: block; /* Affichage en bloc pour occuper toute la largeur */
+    padding: 5px 0; /* Espacement intérieur haut et bas */
+    text-decoration: none; /* Pas de soulignement par défaut */
+    color: black; /* Couleur du texte */
+  }
+
+  .Post{@apply
+    bg-slate-300
+    border 
+    border-gray-300 
+    rounded 
+    flex
+    flex-row
+    items-center
+    px-2
+    py-1
+    space-x-2
+    
+    
+
+  }
+
+  .dashboard-elem{@apply
+    flex 
+    flex-col 
+    items-center 
+    justify-center
+    cursor-pointer
+    
+    
+  }
+
+  .dashboard-elem p{@apply
+    text-sm
+  }
+  .dashboard-elem p:hover{@apply
+    text-gray-700
   }
 
 }

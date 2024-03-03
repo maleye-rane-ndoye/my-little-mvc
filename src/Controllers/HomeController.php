@@ -6,7 +6,9 @@ class HomeController
 
 {
     public function showHomePage()
-    {
+    { 
+         // Vérifier si l'utilisateur est connecté
+        $userLoggedIn = isset($_SESSION['user_id']);
 
         $getProducts = new GetProducts();
 

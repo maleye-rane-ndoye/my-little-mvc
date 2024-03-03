@@ -16,3 +16,5 @@ if (isset($_SESSION['user_id'])) {
     header("Location: /B2/my-little-mvc/login");
     exit();
 }
+
+$userLoggedIn = isset($_SESSION['user_id']);

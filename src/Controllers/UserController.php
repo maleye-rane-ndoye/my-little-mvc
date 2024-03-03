@@ -7,6 +7,8 @@ use App\Models\User;
 class UserController {
 
     public function register() {
+        $userLoggedIn = isset($_SESSION['user_id']);
+
         // Vérifier si le formulaire d'inscription a été soumis
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Récupérer les données du formulaire
@@ -53,6 +55,9 @@ class UserController {
     }
 
     public function login() {
+        
+        $userLoggedIn = isset($_SESSION['user_id']);
+
         // Vérifier si le formulaire de connexion a été soumis
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Récupérer les données du formulaire
