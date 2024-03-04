@@ -71,11 +71,13 @@ class UserController {
             $user = $userModel->login($email, $password);
     
             if ($user) {
-                // L'utilisateur est authentifié avec succès, initialiser la session
                 session_start();
                 // Stocker des informations sur la session de l'utilisateur
-                $_SESSION['user_id'] = $user['id']; // Par exemple, stockez l'ID de l'utilisateur
-                $_SESSION['username'] = $user['firstname'];
+                $_SESSION['user_id'] = $user['id'];
+                if(isset($user['firstname'])) $_SESSION['username'] = $user['firstname'];
+                if(isset($user['lastname'])) $_SESSION['userlastname'] = $user['lastname'];
+                if(isset($user['email'])) $_SESSION['usermail'] = $user['email'];
+                if(isset($user['password'])) $_SESSION['userpassword'] = $user['password'];
                 // Rediriger vers une page sécurisée
                 header("Location: /B2/my-little-mvc/shop");
                 exit();
@@ -100,14 +102,50 @@ class UserController {
     
 
 
-    public function showProfilePage()
-    { 
-         // Vérifier si l'utilisateur est connecté
+    
+
+
+
+    public function updateUser() {
         $userLoggedIn = isset($_SESSION['user_id']);
+        // Vérifier si le formulaire de mise à jour a été soumis
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            session_start();
 
-        
+            // Récupérer les données du formulaire
+            $userId = $_SESSION['user_id'];
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+    
+            // Validation des données
+            if (empty($firstname) || empty($lastname) || empty($email)) {
+                // Afficher un message d'erreur si des champs sont vides
+                echo "Veuillez remplir tous les champs.";
+                return;
+            }
+    
+            // Créer une instance du modèle User
+            $userModel = new User();
+    
+            // Appeler la méthode updateUser du modèle User pour mettre à jour les informations de l'utilisateur
+            $success = $userModel->updateUser($userId, $firstname, $lastname, $email);
+    
+            if ($success) {
+                // Afficher un message de succès
+                echo "Informations mises à jour avec succès.";
+                echo '<script>setTimeout(() => { window.location.href = "/B2/my-little-mvc/profile"; }, 2000);</script>';
 
-        require __DIR__ . '/../Views/profile.php';
+            } else {
+                // Afficher un message d'erreur
+                echo "Une erreur s'est produite lors de la mise à jour des informations.";
+            }
+        } else {
+            // Afficher le formulaire de mise à jour
+            include(dirname(__FILE__) . '/../Views/profile.php');
+        }
     }
+    
+
     
 }

@@ -4,11 +4,6 @@ ob_start();
 ?>
 
 
-
-<a href="/B2/my-little-mvc/logout">Déconnexion</a>
-<div class='test'> the test css</div>
-
-
 <div id="userWelcomeMessage">
     <?php echo 'Bienvenue, ' . $username; ?>
 </div>

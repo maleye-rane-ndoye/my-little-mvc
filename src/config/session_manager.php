@@ -10,6 +10,9 @@ if (isset($_SESSION['user_id'])) {
     // L'utilisateur est connecté
     $userId = $_SESSION['user_id'];
     $username = $_SESSION['username'];
+    $userlastname = $_SESSION['userlastname'];
+    $usermail = $_SESSION['usermail'];
+    $userpassword = $_SESSION['userpassword'];
     // Vous pouvez utiliser ces informations pour personnaliser l'expérience de l'utilisateur
 } else {
     // L'utilisateur n'est pas connecté, vous pouvez rediriger vers la page de connexion

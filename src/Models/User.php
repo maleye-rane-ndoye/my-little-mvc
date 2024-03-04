@@ -56,4 +56,22 @@ class User extends DatabaseLog{
             return false; // ou lancer une exception, etc.
         }
     }
+
+
+    public function updateUser($userId, $firstname, $lastname, $email) {
+        try {
+            $pdo = $this->getBdd();
+            $query = "UPDATE User SET firstname = ?, lastname = ?, email = ? WHERE id = ?";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$firstname, $lastname, $email, $userId]);
+            return true; // Succès de la mise à jour
+        } catch (PDOException $e) {
+            // Gérer les erreurs de requête SQL
+            echo "Erreur SQL : " . $e->getMessage() . "<br>";
+            echo "Requête SQL : " . $query . "<br>";
+            echo "Paramètres : " . implode(", ", [$firstname, $lastname, $email, $userId]) . "<br>";
+            return false; // Échec de la mise à jour
+        }
+    }
+    
 }
