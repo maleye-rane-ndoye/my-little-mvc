@@ -57,7 +57,8 @@ body{
   
   
   .dashboard a:hover {@apply 
-    text-gray-700;
+    text-gray-700
+    no-underline
   }
   
   .dashboard div{@apply
@@ -71,13 +72,31 @@ body{
   }
   
   
-  .dashboard div:first-child {@apply 
+  .dashboard a:first-child {@apply 
     font-extrabold
     text-xl 
-    truncate;
+    truncate
+    no-underline
 
   }
+  .underdashboard{@apply
+    hidden
+    md:flex
+    w-full
+    flex-row
+    items-center
+    justify-around
+    mb-4
+  }
+  .underdashboard a{@apply
+    text-sm
+    hover:underline
+    font-medium
+  }
   
+  .underdashboard a:hover {@apply 
+    text-gray-700;
+  }
   
   .dashboard div:not(:first-child) {@apply 
     ml-4;

@@ -100,10 +100,24 @@ class UserController {
         exit();
     }
     
-
-
+    public function showProfilePage() {
+        // Vérifier si l'utilisateur est connecté
+        $userLoggedIn = isset($_SESSION['user_id']);
+    
+        // Récupérer les informations de l'utilisateur depuis la session
+        $userData = [
+            'firstname' => isset($_SESSION['username']) ? $_SESSION['username'] : '',
+            'lastname' => isset($_SESSION['userlastname']) ? $_SESSION['userlastname'] : '',
+            'email' => isset($_SESSION['usermail']) ? $_SESSION['usermail'] : '',
+            // Ajoutez d'autres informations de profil si nécessaire
+        ];
+    
+        // Afficher la page de profil avec les données de l'utilisateur
+        require_once(__DIR__ . '/../Views/profile.php');
+    }
     
 
+    
 
 
     public function updateUser() {
@@ -111,7 +125,7 @@ class UserController {
         // Vérifier si le formulaire de mise à jour a été soumis
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
-
+    
             // Récupérer les données du formulaire
             $userId = $_SESSION['user_id'];
             $firstname = $_POST['firstname'];
@@ -132,19 +146,20 @@ class UserController {
             $success = $userModel->updateUser($userId, $firstname, $lastname, $email);
     
             if ($success) {
-                // Afficher un message de succès
-                echo "Informations mises à jour avec succès.";
-                echo '<script>setTimeout(() => { window.location.href = "/B2/my-little-mvc/profile"; }, 2000);</script>';
-
+                // Récupérer les nouvelles données de l'utilisateur
+                $newUserData = $userModel->getUserById($userId);
+    
+                header("Location: /B2/my-little-mvc/profile");
             } else {
                 // Afficher un message d'erreur
-                echo "Une erreur s'est produite lors de la mise à jour des informations.";
+                echo json_encode(['success' => false, 'message' => 'Une erreur s\'est produite lors de la mise à jour des informations.']);
             }
         } else {
             // Afficher le formulaire de mise à jour
             include(dirname(__FILE__) . '/../Views/profile.php');
         }
     }
+    
     
 
     

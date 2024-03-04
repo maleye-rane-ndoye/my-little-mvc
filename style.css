@@ -444,11 +444,6 @@ video {
   display: none;
 }
 
-.test {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .nav {
   margin-left: auto;
   margin-right: auto;
@@ -499,6 +494,7 @@ video {
 .dashboard a:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+  text-decoration-line: none;
 }
 
 .dashboard div {
@@ -517,13 +513,41 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.dashboard div:first-child {
+.dashboard a:first-child {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 800;
+  text-decoration-line: none;
+}
+
+.underdashboard {
+  margin-bottom: 1rem;
+  display: none;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .underdashboard {
+    display: flex;
+  }
+}
+
+.underdashboard a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.underdashboard a:hover {
+  text-decoration-line: underline;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .dashboard div:not(:first-child) {
@@ -769,10 +793,6 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.no-underline {
-  text-decoration-line: none;
 }
 
 body{

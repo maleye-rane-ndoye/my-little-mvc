@@ -73,5 +73,19 @@ class User extends DatabaseLog{
             return false; // Échec de la mise à jour
         }
     }
+
+
+    public function getUserById($userId) {
+        try {
+            $pdo = $this->getBdd();
+            $stmt = $pdo->prepare("SELECT * FROM User WHERE id = ?");
+            $stmt->execute([$userId]);
+            return $stmt->fetch();
+        } catch (PDOException $e) {
+            // Gérer les erreurs de sélection
+            return false; // ou lancer une exception, etc.
+        }
+    }
+    
     
 }

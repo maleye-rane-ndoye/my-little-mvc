@@ -54,7 +54,7 @@ $templateData = array(
             </div>
 
             <div class='dashboard'>
-            <div>Wentaire</div>
+            <a href="/B2/my-little-mvc/shop">Wentaire</a>
             <div class="Post">
                 <span class="material-icons-round">add</span>
                 <span> Post New Announce</span>
@@ -84,7 +84,7 @@ $templateData = array(
             
             
             <!-- Categories (for medium screens and larger) -->
-            <div class='dashboard'>
+            <div class='underdashboard'>
                 <a href=''>Vetements</a>
                 <a href=''>Meubles</a>
                 <a href=''>Informatique</a>
