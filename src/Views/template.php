@@ -69,7 +69,7 @@ $templateData = array(
                     <p>Message</p>
                 </a>
                 <!-- Afficher "Profil" si l'utilisateur est connecté -->
-                <a class="dashboard-elem">
+                <a href="/B2/my-little-mvc/profile" class="dashboard-elem">
                     <span class="material-icons-round text-gray-500">person</span>
                     <p>Profil</p>
                 </a>

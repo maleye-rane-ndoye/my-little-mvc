@@ -25,4 +25,7 @@ $router->map('GET', '/shop', [new ShopController(), 'showshopPage']);
 
 // Route pour la déconnexion
 $router->map('GET', '/logout', [new UserController(), 'logout']);
+// Route pour la page de profile
+$router->map('GET', '/profile', [new UserController(), 'showProfilePage']);
+
 

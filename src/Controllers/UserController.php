@@ -98,5 +98,16 @@ class UserController {
         exit();
     }
     
+
+
+    public function showProfilePage()
+    { 
+         // Vérifier si l'utilisateur est connecté
+        $userLoggedIn = isset($_SESSION['user_id']);
+
+        
+
+        require __DIR__ . '/../Views/profile.php';
+    }
     
 }

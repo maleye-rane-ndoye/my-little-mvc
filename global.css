@@ -138,8 +138,6 @@ body{
     items-center 
     justify-center
     cursor-pointer
-    
-    
   }
 
   .dashboard-elem p{@apply
